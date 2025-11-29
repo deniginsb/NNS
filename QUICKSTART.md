@@ -1,230 +1,292 @@
 # Quick Start Guide 🚀
 
-Get Nexus Name Service running locally in 5 minutes!
+Get your `.nexus` domain in 5 minutes!
 
 ## Prerequisites
 
-- Node.js v18+ installed
-- npm or yarn installed
-- MetaMask wallet extension
-- Some NEX tokens on Nexus Testnet (for registration)
+- MetaMask wallet extension ([Download](https://metamask.io))
+- NEX tokens on Nexus Testnet (free from faucet)
+- Web browser (Chrome, Firefox, or Safari)
 
-## Installation
+---
 
-```bash
-# Clone the repository
-git clone https://github.com/deniginsb/NNS.git
-cd NNS/namestone-example
+## Step 1: Install MetaMask
 
-# Install dependencies (takes 1-2 minutes)
-npm install
+If you don't have MetaMask yet:
+
+1. Visit [metamask.io](https://metamask.io)
+2. Click "Download" and install the browser extension
+3. Create a new wallet and save your seed phrase securely
+4. Complete the setup
+
+---
+
+## Step 2: Get Testnet NEX
+
+You need ~0.5 NEX to register a domain:
+
+1. Visit [Nexus Faucet](https://faucet.nexus.xyz)
+2. Connect your wallet
+3. Request testnet tokens
+4. Wait ~30 seconds for tokens to arrive
+
+Verify you received them by checking your MetaMask balance.
+
+---
+
+## Step 3: Visit NNS
+
+Go to **[nns.web.id](https://nns.web.id)**
+
+---
+
+## Step 4: Connect Wallet
+
+1. Click **"Connect Wallet"** button (top right)
+2. Select **MetaMask** from the options
+3. Approve the connection request
+4. **Automatic network switch:**
+   - A popup will ask to switch to Nexus Testnet
+   - Click **"Approve"** or **"Switch Network"**
+   - If Nexus Testnet isn't in your wallet, it will be added automatically
+
+Your wallet is now connected! 🎉
+
+---
+
+## Step 5: Sign In (SIWE)
+
+1. Click **"Sign In"** button
+2. MetaMask will open with a signature request
+3. Read the message (it's just for authentication, no transaction)
+4. Click **"Sign"**
+
+You're now authenticated and ready to register!
+
+---
+
+## Step 6: Register Your Domain
+
+### Choose Your Name
+
+1. Enter your desired domain name in the search box
+   - Example: `alice`, `bob123`, `my-name`
+2. Click **"Search"** or press Enter
+
+**Domain name rules:**
+- ✅ 3-63 characters long
+- ✅ Letters (a-z), numbers (0-9), hyphens (-)
+- ✅ Cannot start or end with hyphen
+- ❌ No special characters
+
+### Check Availability
+
+The system will check if your name is available:
+- ✅ **Available** - You can register it!
+- ❌ **Taken** - Try a different name
+- ❌ **Reserved** - System reserved name
+
+### Complete Registration
+
+1. Click **"Register"** button
+2. Review the details:
+   - Domain: `yourname.nexus`
+   - Duration: 1 year
+   - Fee: 0.5 NEX
+3. Click **"Confirm Registration"**
+4. MetaMask opens - review gas fee (~0.003 NEX)
+5. Click **"Confirm"** in MetaMask
+6. Wait 10-30 seconds for confirmation
+
+**Congratulations! You now own `yourname.nexus`! 🎉**
+
+---
+
+## Step 7: Setup Your Profile (Optional)
+
+Make your domain unique with a custom profile!
+
+### Upload Avatar
+
+1. Find your domain in **"My Domains"** section
+2. Click **"Edit Profile"**
+3. Click **"Upload Avatar"** or drag-and-drop an image
+4. Wait for IPFS upload (~5-10 seconds)
+5. Preview appears when ready
+
+### Add Social Links
+
+1. **Twitter:** Enter your handle without @ (e.g., `alice_crypto`)
+2. **Telegram:** Enter your username without @ (e.g., `alice_tg`)
+
+### Save Changes
+
+1. Click **"Save Profile"**
+2. Confirm transaction in MetaMask
+3. Wait for confirmation
+
+Your profile is now live onchain! ✨
+
+---
+
+## What You Can Do Now
+
+### Share Your Domain
+
+Instead of sharing your long wallet address:
+```
+0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb
 ```
 
-## Environment Setup
-
-### 1. Copy Environment Template
-
-```bash
-cp .env.example .env.local
+Share your simple domain:
+```
+yourname.nexus
 ```
 
-### 2. Edit `.env.local`
+### View Your NFT
 
-Open `.env.local` and add your credentials:
+Each domain is an NFT! Find it:
+- In your MetaMask wallet (Assets → NFTs)
+- On OpenSea: `testnets.opensea.io`
+- Metadata API: `https://nns.web.id/api/metadata/yourname`
 
-```bash
-# SIWE Session Secret (generate a random 48-character string)
-SESSION_SECRET=your_random_secret_key_here_min_32_chars
+### Transfer Ownership
 
-# WalletConnect Project ID (get from https://cloud.walletconnect.com)
-NEXT_PUBLIC_WALLETCONNECT_ID=your_walletconnect_project_id
+You can transfer your domain to another wallet:
+1. Go to **"My Domains"**
+2. Click **"Transfer"**
+3. Enter recipient address
+4. Confirm transaction
 
-# Pinata Configuration (for IPFS uploads)
-# Get from https://app.pinata.cloud/developers/api-keys
-PINATA_JWT=your_pinata_jwt_token
-NEXT_PUBLIC_GATEWAY_URL=https://gateway.pinata.cloud
+⚠️ **Warning:** Transfers are permanent!
+
+---
+
+## Verify Your Domain
+
+### Check on Explorer
+
+View your domain onchain:
 ```
-
-#### Get API Keys:
-
-**WalletConnect:**
-1. Visit https://cloud.walletconnect.com
-2. Create a new project
-3. Copy the Project ID
-
-**Pinata:**
-1. Visit https://app.pinata.cloud
-2. Sign up for free account
-3. Go to API Keys → New Key
-4. Enable Admin permissions
-5. Copy the JWT token
-
-**SESSION_SECRET:**
-```bash
-# Generate random secret
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-```
-
-## Run Development Server
-
-```bash
-npm run dev
-```
-
-Frontend runs at `http://localhost:3000` 🎉
-
-## First Domain Registration
-
-### 1. Add Nexus Testnet to MetaMask
-
-The app will auto-prompt you, but you can add manually:
-
-- **Network Name:** Nexus Testnet
-- **RPC URL:** https://testnet3.rpc.nexus.xyz
-- **Chain ID:** 3940
-- **Symbol:** NEX
-- **Explorer:** https://testnet3.explorer.nexus.xyz
-
-### 2. Get Testnet NEX
-
-You'll need ~1 NEX for testing (0.5 for registration + gas fees).
-
-Contact Nexus team for testnet faucet or deploy your own contracts.
-
-### 3. Register Your Domain
-
-1. Open `http://localhost:3000`
-2. Click **"Connect Wallet"**
-3. Select MetaMask
-4. Approve network switch to Nexus Testnet
-5. Click **"Sign In"** and sign the SIWE message
-6. Enter your desired name (e.g., "alice")
-7. Click **"Register (0.5 NEX)"**
-8. Confirm transaction in MetaMask
-9. Wait for confirmation (~2 seconds)
-10. Done! You now own **alice.nexus** 🎉
-
-### 4. Update Your Profile
-
-1. Click the camera icon to upload avatar
-2. Select an image (will be uploaded to IPFS)
-3. Add your Twitter handle (without @)
-4. Add your Telegram username
-5. Click **"Update Profile"**
-6. Confirm transaction
-7. Profile updated onchain! ✨
-
-## Connect to Live Testnet
-
-By default, the app connects to live Nexus Testnet. No additional configuration needed!
-
-Contract addresses are already set in `src/config/nns-contracts.ts`.
-
-## Troubleshooting
-
-### "Cannot connect wallet"
-- Make sure MetaMask is installed
-- Try refreshing the page
-- Check browser console for errors
-
-### "Network switch failed"
-- Approve the network add/switch prompt in MetaMask
-- Add Nexus Testnet manually (see instructions above)
-
-### "Insufficient funds"
-- Make sure you have at least 0.6 NEX (0.5 + gas)
-- Verify you're on Nexus Testnet (Chain ID: 3940)
-- Check your balance in MetaMask
-
-### "SIWE sign-in failed"
-- Make sure SESSION_SECRET is set in .env.local
-- Try disconnecting wallet and reconnecting
-- Clear browser cache and try again
-
-### "Avatar upload failed"
-- Verify PINATA_JWT is valid in .env.local
-- Check Pinata dashboard for API key status
-- Ensure image size is reasonable (<5MB)
-
-### "Transaction failed"
-- Check if domain name is already registered
-- Verify name is 3-63 characters, alphanumeric + hyphens
-- Ensure you have enough NEX for gas
-
-## Verify It Works
-
-### Check Your Domain Onchain
-
-```bash
-# View your domain on Explorer
 https://testnet3.explorer.nexus.xyz/address/0xDfB90263512321E6f14Cf63e30675A6E443924A8
 ```
 
 ### Check NFT Metadata
 
-```bash
-# View NFT metadata
+```
 https://nns.web.id/api/metadata/yourname
 ```
 
-Should return JSON:
-```json
-{
-  "name": "yourname.nexus",
-  "description": "yourname.nexus - A decentralized domain on Nexus Name Service",
-  "image": "https://gateway.pinata.cloud/ipfs/...",
-  "attributes": [...]
-}
+Should return JSON with your domain info, avatar, and social links.
+
+### View Public Profile
+
+```
+https://nns.web.id/?domain=yourname
 ```
 
-### Verify on OpenSea (Testnet)
+Anyone can view your public profile!
 
-Your NFT should be viewable on OpenSea testnet:
-```
-https://testnets.opensea.io/assets/nexus-testnet/0xDfB90263512321E6f14Cf63e30675A6E443924A8/[TOKEN_ID]
-```
+---
+
+## Troubleshooting
+
+### "Wrong network" error
+
+**Solution:**
+- Click "Switch Network" when prompted
+- Or manually add Nexus Testnet in MetaMask:
+  - Network Name: `Nexus Testnet`
+  - RPC URL: `https://testnet3.rpc.nexus.xyz`
+  - Chain ID: `3940`
+  - Symbol: `NEX`
+  - Explorer: `https://testnet3.explorer.nexus.xyz`
+
+### "Insufficient funds" error
+
+**Solution:**
+- Get more NEX from [faucet](https://faucet.nexus.xyz)
+- Need at least 0.5 NEX + gas (~0.003 NEX)
+- Total: ~0.51 NEX minimum
+
+### "Domain unavailable"
+
+**Solution:**
+- Someone already owns it - try a different name
+- It's reserved (system names like `www`, `admin`)
+- Invalid format - check naming rules above
+
+### Transaction stuck
+
+**Solution:**
+- Wait 1-2 minutes (network might be busy)
+- Check transaction on [Explorer](https://testnet3.explorer.nexus.xyz)
+- If failed, try again with higher gas
+
+### Can't connect wallet
+
+**Solution:**
+- Make sure MetaMask is installed
+- Try refreshing the page
+- Check you're using supported browser
+- Try incognito/private mode
+
+### Avatar won't upload
+
+**Solution:**
+- Image might be too large (max 10 MB)
+- Try compressing the image
+- Check file format (PNG, JPG, GIF supported)
+- Wait and try again (IPFS might be slow)
+
+---
 
 ## Next Steps
 
-- [Read full documentation](./docs)
-- [Understand the architecture](./docs/ARCHITECTURE.md)
-- [Learn about smart contracts](./docs/CONTRACTS.md)
-- [Deploy your own instance](./docs/DEPLOYMENT.md)
-- [Contribute to the project](./CONTRIBUTING.md)
+### For Users
 
-## Development Tips
+- [📖 Full User Guide](./docs/USER_GUIDE.md) - Complete documentation
+- [❓ FAQ](./docs/USER_GUIDE.md#faq) - Common questions
+- [💡 Use Cases](./docs/USER_GUIDE.md#use-cases) - What you can do with domains
 
-### Hot Reload
+### For Developers
 
-The Next.js dev server has hot reload enabled. Changes to code will auto-refresh the browser.
+- [🏗️ Architecture](./docs/ARCHITECTURE.md) - System design overview
+- [📝 Smart Contracts](./docs/CONTRACTS.md) - Contract documentation
+- [🚀 Deployment](./docs/DEPLOYMENT.md) - Deploy your own instance
+- [🤝 Contributing](./CONTRIBUTING.md) - How to contribute
 
-### Type Checking
-
-```bash
-# Check TypeScript types
-npm run type-check
-```
-
-### Build for Production
-
-```bash
-# Test production build locally
-npm run build
-npm run start
-```
-
-### Lint Code
-
-```bash
-# Run ESLint
-npm run lint
-```
+---
 
 ## Need Help?
 
-- Check [Documentation](./docs)
-- Open an [Issue](https://github.com/deniginsb/NNS/issues)
-- Read [Architecture Docs](./docs/ARCHITECTURE.md)
-- Join discussions (if available)
+- **Questions:** Open a [GitHub Discussion](https://github.com/deniginsb/NNS/discussions)
+- **Bug Reports:** Create an [Issue](https://github.com/deniginsb/NNS/issues)
+- **Twitter:** [@DBzhx7955](https://x.com/DBzhx7955)
 
-Happy naming! 🌐✨
+---
+
+## Summary
+
+**What you just did:**
+1. ✅ Installed MetaMask
+2. ✅ Got free testnet NEX
+3. ✅ Connected to NNS
+4. ✅ Registered `yourname.nexus` domain
+5. ✅ Set up your profile (avatar, socials)
+6. ✅ Own an NFT representing your domain!
+
+**Your domain is:**
+- 🔐 Owned by you (ERC-721 NFT)
+- 🌐 Stored onchain (decentralized)
+- 💱 Tradeable (sell on marketplaces)
+- 🔄 Transferable (send to anyone)
+- ⏰ Valid for 1 year (renewable)
+
+Welcome to the Nexus Name Service community! 🌐✨
+
+Happy naming! 🎉
+
+---
+
+Last updated: 2025-01-29

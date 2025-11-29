@@ -28,27 +28,21 @@ It's more than just a name - it's your complete Web3 identity with profile info,
 **Live App:** [https://nns.web.id/](https://nns.web.id/)
 **Testnet Explorer:** [https://testnet3.explorer.nexus.xyz](https://testnet3.explorer.nexus.xyz/)
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-```bash
-# Clone repository
-git clone https://github.com/deniginsb/NNS.git
-cd NNS/namestone-example
+### For Users
+1. Visit **[nns.web.id](https://nns.web.id)**
+2. Connect your MetaMask wallet
+3. Get free Nexus Testnet tokens from the [faucet](https://faucet.nexus.xyz)
+4. Register your `.nexus` domain!
 
-# Install dependencies
-npm install
+[📖 Full User Guide →](./docs/USER_GUIDE.md)
 
-# Setup environment variables
-cp .env.example .env.local
-# Edit .env.local with your credentials
-
-# Start development server
-npm run dev
-```
-
-Visit `http://localhost:3000` and start registering!
-
-[📖 Detailed Quick Start Guide →](./QUICKSTART.md)
+### For Developers
+- [Architecture Overview](./docs/ARCHITECTURE.md) - System design and components
+- [Smart Contracts Reference](./docs/CONTRACTS.md) - Contract documentation and ABIs
+- [Deployment Guide](./docs/DEPLOYMENT.md) - How to deploy your own instance
+- [Contributing Guidelines](./CONTRIBUTING.md) - How to contribute to this project
 
 ## ✨ Features
 
