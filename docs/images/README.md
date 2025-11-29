@@ -88,4 +88,4 @@ All images © Nexus Name Service team and contributors.
 
 ---
 
-Last updated: 2025-01-29
+Last updated: 2025-11-29

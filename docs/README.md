@@ -89,7 +89,7 @@ Welcome to the Nexus Name Service documentation!
 - **Total sections**: 50+
 - **Code examples**: 100+
 - **Screenshots**: 1 (main preview)
-- **Last updated**: 2025-01-29
+- **Last updated**: 2025-11-29
 
 ## 🔗 External Resources
 

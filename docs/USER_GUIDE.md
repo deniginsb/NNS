@@ -702,4 +702,4 @@ Your decentralized identity starts now.
 
 ---
 
-Last updated: 2025-01-29
+Last updated: 2025-11-29
