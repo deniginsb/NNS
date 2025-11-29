@@ -1,0 +1,19 @@
+{
+  "regions": ["sin1"],
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.nns.web.id"
+        }
+      ],
+      "destination": "https://nns.web.id/:path*",
+      "permanent": true
+    }
+  ]
+}
